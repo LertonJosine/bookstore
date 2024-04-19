@@ -1,0 +1,13 @@
+{% block head %}
+  <h1>Logoin</h1>
+{% endblock %}
+{% block content %}
+<p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an accout? <a href="{% url 'account_signup' %}">Signup.</a></p>
+</p>
+{% endblock %}

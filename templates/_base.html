@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <meta charset="utf-8" />
     <title>
       {% block title %}
@@ -14,5 +16,6 @@
 
       {% endblock %}
     </div>
+    <script src="{% static 'js/base.js' %}"></script>
   </body>
 </html>
