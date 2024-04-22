@@ -4,4 +4,9 @@
   <h1>{{ book.title }}</h1>
   <p>{{ book.author }}</p>
   <p>{{ book.price }}</p>
+  <h2>Reviews</h2>
+  {% for review in book.reviews.all %}
+    <i>{{ review.author }}</i>
+    <p>{{ review.review }}</p>
+  {% endfor %}
 {% endblock %}
