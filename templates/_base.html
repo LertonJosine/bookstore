@@ -12,6 +12,10 @@
   </head>
   <body>
     <div class="container">
+      <form action="{% url 'search_results' %}" method="get">
+        <input type="search" name="q" placeholder="Search" id="">
+        <button type="submit">Submit</button>
+      </form>
       {% block content %}
 
       {% endblock %}
