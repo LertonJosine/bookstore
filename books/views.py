@@ -19,7 +19,7 @@ class BookDetailView(DetailView):
     model = Book
     template_name = 'book_details.html'
     context_object_name = 'book'
-
+    queryset = Book.objects.all().prefetch_related('reviews__author')
 
 class SearchResultsListView(ListView):
     model = Book

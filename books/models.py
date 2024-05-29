@@ -24,6 +24,7 @@ class Book(models.Model):
     class Meta:
         permissions = [
             ("special_status", "can read all books")   ]
+        indexes = [models.Index(fields=['id'], name='id_index'),]
 
 class Review(models.Model):
     id = models.UUIDField(

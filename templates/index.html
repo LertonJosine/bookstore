@@ -5,17 +5,5 @@
 {% endblock %}
 {% block content %}
   <h1>This is our home page.</h1>
-  <img src="{% static 'images/dfp.jpg' %}" alt="foto">
-  {% if user.is_authenticated %}
-    <h2>Hello {{ user.username }}</h2>
-    {% comment %} <form action="{% url 'account_logout' %}" method="post">
-      {% csrf_token %}
-      <button type="submit">Logout</button>
-    </form> {% endcomment %}
-    <a href="{% url 'account_logout' %}">Logout</a>
-  {% else %}
-    <p>
-      Click <a href="{% url 'account_login' %}">here</a> to login
-    </p>
-  {% endif %}
+  <img class="bookcover" src="{% static 'images/dfp.jpg' %}" />
 {% endblock %}
