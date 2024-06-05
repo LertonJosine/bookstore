@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
-h1{
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}
+
+h1 {
     color: red;
 }
 
-img{
-    width: 300px;
-    height: 400px;
+img.bookcover {
+    height: 300px;
+    width: auto;
 }

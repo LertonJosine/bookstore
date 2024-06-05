@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from environs import Env
+import os
 
 env = Env()
 Env.read_env()
@@ -31,6 +32,7 @@ DEBUG = env.bool("DJANGO_DEBUG_STATUS", default=False)
 
 ALLOWED_HOSTS = [
     '.vercel.app',
+    '.now.sh'
 ]
 
 # Application definition
@@ -90,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bookstore.wsgi.application'
+WSGI_APPLICATION = 'bookstore.wsgi.app'
 
 
 # Database
@@ -139,8 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
